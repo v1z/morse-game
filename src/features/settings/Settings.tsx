@@ -10,7 +10,7 @@ type SettinsProps = {
   fieldSize: number
 }
 
-const MIN_SIZE = 4
+const MIN_SIZE = 2
 const MAX_SIZE = 10
 
 export const Settings = (props: SettinsProps) => {
