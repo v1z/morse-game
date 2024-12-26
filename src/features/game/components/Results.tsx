@@ -23,7 +23,7 @@ export const Results = (props: ResultsProps) => {
     <section className={s.results}>
       <span className={s.resultTitle}>Congratz!</span>
 
-      <p>
+      <p className={s.resultText}>
         You have found {fieldSize * fieldSize} Morse with {clicksSpent} clicks - share your success on X
       </p>
 
