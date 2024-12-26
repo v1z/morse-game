@@ -75,6 +75,8 @@ export const Game = (props: GameProps) => {
         <span>Clicks spent: {clicksSpent}</span>
       </div>
 
+      <p className={s.gameTitle}>Click on&nbsp;the card and reveal the Morse, then try to&nbsp;find the same one</p>
+
       <Field
         cards={cardsMap}
         size={fieldSize}

@@ -24,7 +24,7 @@ export const Results = (props: ResultsProps) => {
       <span className={s.resultTitle}>Congratz!</span>
 
       <p className={s.resultText}>
-        You have found {fieldSize * fieldSize} Morse with {clicksSpent} clicks - share your success on X
+        You have found {fieldSize * fieldSize} Morse with {clicksSpent} clicks&nbsp;&mdash; share your success on&nbsp;X
       </p>
 
       <div className={s.resultBtns}>

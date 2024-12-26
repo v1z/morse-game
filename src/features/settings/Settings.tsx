@@ -30,7 +30,7 @@ export const Settings = (props: SettinsProps) => {
 
   return (
     <div className={s.root}>
-      <h1 className={s.title}>Game of Morse</h1>
+      <h1 className={s.title}>Game of&nbsp;Morse</h1>
 
       <span className={s.subtitle}>Choose the field size</span>
 
