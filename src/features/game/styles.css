@@ -1,0 +1,143 @@
+:root {
+  --cell-size: 100px;
+}
+
+.game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 40px 0;
+  user-select: none;
+}
+
+.stats {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--color-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.statItem {
+  margin-right: 24px;
+}
+
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.cell {
+  position: relative;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 4px;
+  border: 2px solid var(--color-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: opacity .25s;
+
+  &_opened {
+    pointer-events: none;
+  }
+
+  &:hover {
+    opacity: 0.55;
+
+    .cellCover {
+      background-color: var(--color-main);
+    }
+  }
+}
+
+.cellCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.1;
+  transition: opacity .25s, background-color .25s;
+
+  &_hidden {
+    opacity: 0;
+  }
+}
+
+.reset {
+  border: 2px solid var(--color-secondary);
+  background: #fff;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color .25s;
+  margin-top: 12px;
+  padding: 0 24px;
+  /* font-size: 24px; */
+  border-radius: 8px;
+
+  &:hover {
+    background: var(--color-main);
+  }
+}
+
+.results {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  border-radius: 16px;
+  border: 2px solid var(--color-secondary);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.resultTitle {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.resultBtns {
+  margin-top: 12px;
+  display: flex;
+
+  button {
+    border: 2px solid var(--color-secondary);
+    background: #fff;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color .25s;
+    margin: 0 4px;
+    padding: 0 24px;
+    border-radius: 8px;
+
+    &:hover {
+      background: var(--color-main);
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 24px;
+}
+
+.title {
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.subtitle {
+  font-weight: 600;
+  margin: 18px 0 8px;
+}
+
+.controls {
+  display: flex;
+  user-select: none;
+}
+
+.clickable {
+  border: 2px solid var(--color-secondary);
+  background: #fff;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color .25s;
+
+  &_disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
+
+  &:hover {
+    background: var(--color-main);
+  }
+}
+
+.button {
+  border-radius: 50%;
+  width: 40px;
+}
+
+.size {
+  border-radius: 8px;
+  width: 80px;
+  margin: 0 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.start {
+  margin-top: 12px;
+  padding: 0 24px;
+  font-size: 24px;
+  border-radius: 8px;
+  height: auto;
+}

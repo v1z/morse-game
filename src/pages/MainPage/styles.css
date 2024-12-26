@@ -1,0 +1,21 @@
+.footer {
+  height: 30px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--color-secondary);
+  background-color: #fff;
+  user-select: none;
+
+  a {
+    transition: opacity .2s;
+  }
+
+  &:hover a {
+    opacity: .65;
+  }
+}
