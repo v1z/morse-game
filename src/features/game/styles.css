@@ -9,8 +9,12 @@
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
-  padding: 40px 0;
+  padding: 60px 0;
   user-select: none;
+
+  @media (--tablet) {
+    padding: 90px 0;
+  }
 }
 
 .stats {
