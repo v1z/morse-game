@@ -11,7 +11,7 @@ type ResultsProps = {
 export const Results = (props: ResultsProps) => {
   const { fieldSize, clicksSpent, onReset } = props
 
-  const textToShare = `Look what I have found - a wonderful game made by @v1z1337 about @Morse_404 NFT collection!\n\nI have finished level ${fieldSize} with just ${clicksSpent} clicks - can you beat that record?\n\nTry it out here `
+  const textToShare = `Look what I have found - a wonderful game made by @v1z1337 about @Morse_404 NFT collection (sidekick of @MitosisOrg)\n\nI have finished level ${fieldSize} with just ${clicksSpent} clicks - can you beat that record?\n\nTry it out here https://find-morse.vercel.app/`
 
   const handleShare = () => {
     const tweetText = encodeURIComponent(textToShare)

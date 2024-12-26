@@ -10,7 +10,7 @@ type GameStageType = 'notStarted' | 'inProgress'
 
 export const MainPage = () => {
   const [gameStage, setGameStage] = useState<GameStageType>('notStarted')
-  const [fieldSize, setFieldSize] = useState<number>(2)
+  const [fieldSize, setFieldSize] = useState<number>(4)
 
   const handleGameStart = () => {
     setGameStage('inProgress')
