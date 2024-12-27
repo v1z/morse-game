@@ -33,7 +33,7 @@ export const Results = (props: ResultsProps) => {
         </button>
 
         <button type="button" className={s.shareButton} onClick={onReset}>
-          PLAY AGAIN
+          PLAY&nbsp;AGAIN
         </button>
       </div>
     </section>
