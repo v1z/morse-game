@@ -11,12 +11,16 @@
   border-top: 2px solid var(--color-secondary);
   background-color: #fff;
   user-select: none;
+}
 
-  a {
-    transition: opacity .2s;
+.link {
+  &:hover .username {
+    color: var(--text-color);
+    opacity: .5;
   }
+}
 
-  &:hover a {
-    opacity: .65;
-  }
+.username {
+  color: var(--color-secondary);
+  transition: color .25s, opacity .25s;
 }

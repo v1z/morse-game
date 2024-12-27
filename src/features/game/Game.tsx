@@ -41,15 +41,6 @@ export const Game = (props: GameProps) => {
   const handleCardClick = (id: number, nft: number) => {
     incrementClicks()
 
-    // 2 different opened and new click - reset both
-    if (revealedCards.size === 2) {
-      setRevealedCards(new Set())
-      setLastClickedCard(undefined)
-      setLastClickedNFT(undefined)
-
-      return
-    }
-
     // 1 opened and new click with match - save both as completed and reset
     if (lastClickedCard !== undefined && lastClickedNFT === nft) {
       setCompletedCards([...completedCards, lastClickedCard, id])
@@ -60,10 +51,15 @@ export const Game = (props: GameProps) => {
       return
     }
 
-    // 1 opened and new click with different nft - add both to revealed
+    // 2 different opened and new click
+    if (revealedCards.size === 2) {
+      setRevealedCards(new Set([id]))
+    } else {
+      setRevealedCards(new Set([...revealedCards, id]))
+    }
+
     setLastClickedCard(id)
     setLastClickedNFT(nft)
-    setRevealedCards(new Set([...revealedCards, id]))
   }
 
   const unfinishedCards = fieldSize * fieldSize - completedCards.length

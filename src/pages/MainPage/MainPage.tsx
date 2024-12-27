@@ -37,8 +37,8 @@ export const MainPage = () => {
       </main>
 
       <footer className={s.footer}>
-        <a href="https://x.com/v1z1337" target="_blank">
-          made by v1z
+        <a href="https://x.com/v1z1337" target="_blank" className={s.link}>
+          made by <span className={s.username}>@v1z1337</span>
         </a>
       </footer>
     </>

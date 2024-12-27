@@ -11,7 +11,7 @@ type SettinsProps = {
 }
 
 const MIN_SIZE = 2
-const MAX_SIZE = 10
+const MAX_SIZE = 8
 
 export const Settings = (props: SettinsProps) => {
   const { onStart, onSizeChange, fieldSize } = props
@@ -46,7 +46,9 @@ export const Settings = (props: SettinsProps) => {
           -
         </button>
 
-        <span className={cn(s.size, s.clickable)}>{fieldSize}</span>
+        <span className={cn(s.size, s.clickable)}>
+          {fieldSize}x{fieldSize}
+        </span>
 
         <button
           type="button"
