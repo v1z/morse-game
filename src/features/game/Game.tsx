@@ -12,7 +12,10 @@ type GameProps = {
   onReset: () => void
 }
 
-const SUPPORTED_NFT_NUMBERS: number[] = [1527, 2095, 2279, 2413, 2877, 4134, 4160, 5227, 5283, 7622, 9656]
+const SUPPORTED_NFT_NUMBERS: number[] = [
+  439, 1527, 1553, 2077, 2088, 2092, 2122, 2124, 2358, 2791, 4180, 4899, 4901, 4939, 4975, 5077, 5263, 5346, 5577, 8050,
+  8603, 9937, 2095, 2279, 2413, 2877, 4134, 4160, 5227, 5283, 7622, 9656,
+]
 
 export const Game = (props: GameProps) => {
   const [cardsMap, setCardsMap] = useState<CardsMapType | undefined>(undefined)
