@@ -98,8 +98,8 @@
   }
 
   &_opened {
-    pointer-events: none;
     color: transparent;
+    pointer-events: none;
     transform: rotate3d(0, 1, 0, 180deg);
   }
 }
@@ -119,7 +119,7 @@
   font-size: 16px;
   font-weight: 600;
   line-height: 1.1;
-  transition: opacity .6s;
+  transition: opacity .3s;
 
   @media (--tablet) {
     font-size: 18px;
@@ -128,6 +128,7 @@
 
   &_hidden {
     opacity: 0;
+    transition: opacity .3s .3s;
 
     @media (--tablet) {
       transition: background-color .3s, opacity .3s .3s;
