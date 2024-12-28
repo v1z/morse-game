@@ -96,7 +96,7 @@ export const Game = (props: GameProps) => {
           RESTART
         </Button>
 
-        {unfinishedCards === 0 && !isResultOpened && (
+        {unfinishedCards === 0 && (
           <Button className={s.resultBtn} onClick={toggleResultClose}>
             RESULT
           </Button>

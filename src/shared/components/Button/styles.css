@@ -8,6 +8,7 @@
   text-wrap: nowrap;
   font-weight: 600;
   user-select: none;
+  outline: none;
 
   &:hover {
     background: var(--color-secondary);
