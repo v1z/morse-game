@@ -58,6 +58,10 @@ button {
   font: inherit;
   color: inherit;
   outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
 
   &:focus-visible,
   &:focus {
@@ -69,6 +73,10 @@ a {
   text-decoration: none;
   color: inherit;
   outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
 
   &:focus {
     outline: none;
