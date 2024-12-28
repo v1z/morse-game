@@ -44,8 +44,8 @@ export const Game = (props: GameProps) => {
     onReset()
   }
 
-  const handleResultClose = () => {
-    setResultOpened(false)
+  const toggleResultClose = () => {
+    setResultOpened(!isResultOpened)
   }
 
   const handleCardClick = (id: number, nft: number) => {
@@ -91,12 +91,20 @@ export const Game = (props: GameProps) => {
         onClick={handleCardClick}
       />
 
-      <Button className={s.reset} onClick={handleResetClick}>
-        RESTART
-      </Button>
+      <div className={s.buttons}>
+        <Button className={s.reset} onClick={handleResetClick}>
+          RESTART
+        </Button>
+
+        {unfinishedCards === 0 && !isResultOpened && (
+          <Button className={s.resultBtn} onClick={toggleResultClose}>
+            RESULT
+          </Button>
+        )}
+      </div>
 
       {unfinishedCards === 0 && isResultOpened && (
-        <Result fieldSize={fieldSize} clicksSpent={clicksSpent} onReset={handleResultClose} />
+        <Result fieldSize={fieldSize} clicksSpent={clicksSpent} onReset={toggleResultClose} />
       )}
     </div>
   )

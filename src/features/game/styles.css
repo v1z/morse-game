@@ -110,9 +110,18 @@
   }
 }
 
-.reset {
+.buttons {
   margin-top: 12px;
+  display: flex;
+}
+
+.reset,
+.resultBtn {
   padding: 0 24px;
+}
+
+.resultBtn {
+  margin-left: 8px;
 }
 
 .results {
