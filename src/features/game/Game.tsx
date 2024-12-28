@@ -77,8 +77,13 @@ export const Game = (props: GameProps) => {
   return (
     <div className={s.game}>
       <div className={s.stats}>
-        <span className={s.statItem}>Morse to find: {unfinishedCards}</span>
-        <span>Clicks spent: {clicksSpent}</span>
+        <span className={s.statItem}>
+          Morse to find: <span className={s.statValue}>{unfinishedCards}</span>
+        </span>
+
+        <span className={s.statItem}>
+          Clicks spent: <span className={s.statValue}>{clicksSpent}</span>
+        </span>
       </div>
 
       <p className={s.gameTitle}>Click on&nbsp;the card and reveal the Morse, then try to&nbsp;find the same one</p>

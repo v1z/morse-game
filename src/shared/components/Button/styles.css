@@ -3,16 +3,18 @@
   background: #fff;
   height: 40px;
   cursor: pointer;
-  transition: background-color .25s, color .25s;
+  transition: background-color .3s, color .3s;
   border-radius: 8px;
   text-wrap: nowrap;
   font-weight: 600;
   user-select: none;
   outline: none;
 
-  &:hover {
-    background: var(--color-secondary);
-    color: #fff;
+  @media (--tablet) {
+    &:hover {
+      background: var(--color-secondary);
+      color: #fff;
+    }
   }
 
   &_disabled {
