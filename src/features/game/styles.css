@@ -97,7 +97,6 @@
   }
 
   &_opened {
-    transition: transform .6s, color .3s;
     pointer-events: none;
     color: transparent;
     background-color: var(--color-secondary);

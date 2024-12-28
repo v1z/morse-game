@@ -57,9 +57,11 @@ p {
 button {
   font: inherit;
   color: inherit;
+  outline: none !important;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  outline: none !important;
 }
