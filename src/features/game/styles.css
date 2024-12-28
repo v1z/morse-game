@@ -89,6 +89,8 @@
     }
 
     &_opened {
+      background-color: var(--color-secondary);
+
       .cellCover {
         background-color: var(--color-secondary);
       }
@@ -98,7 +100,6 @@
   &_opened {
     pointer-events: none;
     color: transparent;
-    background-color: var(--color-secondary);
     transform: rotate3d(0, 1, 0, 180deg);
   }
 }
@@ -118,15 +119,19 @@
   font-size: 16px;
   font-weight: 600;
   line-height: 1.1;
-  transition: background-color .3s, opacity .3s;
+  transition: opacity .6s;
 
   @media (--tablet) {
     font-size: 18px;
+    transition: background-color .6s, opacity .3s;
   }
 
   &_hidden {
     opacity: 0;
-    transition: background-color .3s, opacity .3s .3s;
+
+    @media (--tablet) {
+      transition: background-color .3s, opacity .3s .3s;
+    }
   }
 }
 
