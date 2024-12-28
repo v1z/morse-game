@@ -3,12 +3,13 @@
   margin-left: auto;
   padding-right: var(--grid-padding);
   padding-left: var(--grid-padding);
+  background-color: var(--color-main);
   width: 100%;
-  /* min-width: var(--grid-content-fluid); */
 
   @media (--tablet-large) {
     width: var(--grid-content-tablet);
-    max-width: none;
+    /* border-right: 2px solid var(--color-secondary);
+    border-left: 2px solid var(--color-secondary); */
   }
 
   @media (--desktop) {

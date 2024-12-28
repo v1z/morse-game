@@ -1,6 +1,8 @@
 import React from 'react'
 import cn from 'classnames'
 
+import { Button } from '../../../shared/components/Button'
+
 import s from '../styles.css'
 
 type CellProps = {
@@ -18,13 +20,11 @@ export const Cell = (props: CellProps) => {
   }
 
   return (
-    <button
-      type="button"
+    <Button
       className={cn(s.cell, {
         [s.cell_opened]: isOpened,
       })}
       onClick={() => handleClick(id, nft)}
-      disabled={isOpened}
     >
       <div
         className={cn(s.cellCover, {
@@ -36,6 +36,6 @@ export const Cell = (props: CellProps) => {
       </div>
 
       <img src={`./nfts/${nft}.jpg`} alt="" />
-    </button>
+    </Button>
   )
 }

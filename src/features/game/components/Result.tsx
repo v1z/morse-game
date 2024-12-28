@@ -1,14 +1,16 @@
 import React from 'react'
 
+import { Button } from '../../../shared/components/Button'
+
 import s from '../styles.css'
 
-type ResultsProps = {
+type ResultProps = {
   fieldSize: number
   clicksSpent: number
   onReset: () => void
 }
 
-export const Results = (props: ResultsProps) => {
+export const Result = (props: ResultProps) => {
   const { fieldSize, clicksSpent, onReset } = props
 
   const textToShare = `Look what I have found - a wonderful game made by @v1z1337 about @Morse_404 NFT collection (sidekick of @MitosisOrg)\n\nI have finished level ${fieldSize} with just ${clicksSpent} clicks - can you beat that record? #findMorseGame\n\nTry it out here https://find-morse.vercel.app/`
@@ -28,13 +30,13 @@ export const Results = (props: ResultsProps) => {
       </p>
 
       <div className={s.resultBtns}>
-        <button type="button" className={s.shareButton} onClick={handleShare}>
+        <Button className={s.btn} onClick={handleShare}>
           SHARE
-        </button>
+        </Button>
 
-        <button type="button" className={s.shareButton} onClick={onReset}>
-          PLAY&nbsp;AGAIN
-        </button>
+        <Button className={s.btn} onClick={onReset}>
+          CLOSE
+        </Button>
       </div>
     </section>
   )

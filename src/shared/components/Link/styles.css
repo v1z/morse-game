@@ -1,0 +1,8 @@
+.root {
+  color: var(--color-secondary);
+  transition: color .25s;
+
+  &:hover {
+    color: var(--text-color);
+  }
+}

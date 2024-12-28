@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 36px);
-  font-size: 24px;
 }
 
 .title {
@@ -19,37 +18,19 @@
 }
 
 .subtitle {
+  font-size: 28px;
   font-weight: 600;
   margin: 12px 0 8px;
-
-  @media (--tablet) {
-    margin: 18px 0 8px;
-  }
 }
 
 .controls {
   display: flex;
-  user-select: none;
+  font-size: 22px;
 }
 
 .clickable {
-  border: 2px solid var(--color-secondary);
-  background: #fff;
-  height: 40px;
-  font: inherit;
-  cursor: pointer;
-  transition: background-color .25s;
   padding: 0;
   margin: 0;
-
-  &_disabled {
-    opacity: 0.2;
-    cursor: default;
-  }
-
-  &:hover {
-    background: var(--color-main);
-  }
 }
 
 .button {
@@ -58,7 +39,6 @@
 }
 
 .size {
-  border-radius: 8px;
   width: 80px;
   margin: 0 12px;
   display: flex;
@@ -69,8 +49,6 @@
 
 .start {
   margin-top: 12px;
-  padding: 4px 24px;
+  padding: 4px 63px;
   font-size: 20px;
-  border-radius: 8px;
-  height: auto;
 }

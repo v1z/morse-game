@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Field } from './components/Field'
-import { Results } from './components/Results'
+import { Result } from './components/Result'
 import { gameSetup } from './utils/gameSetup'
+
+import { Button } from '../../shared/components/Button'
 
 import s from './styles.css'
 
@@ -24,6 +26,7 @@ export const Game = (props: GameProps) => {
   const [revealedCards, setRevealedCards] = useState(new Set(undefined))
   const [completedCards, setCompletedCards] = useState<number[]>([])
   const [clicksSpent, setClicksSpent] = useState<number>(0)
+  const [isResultOpened, setResultOpened] = useState(true)
 
   const { fieldSize, onReset } = props
 
@@ -37,8 +40,12 @@ export const Game = (props: GameProps) => {
     setClicksSpent(clicksSpent + 1)
   }
 
-  const handleReset = () => {
+  const handleResetClick = () => {
     onReset()
+  }
+
+  const handleResultClose = () => {
+    setResultOpened(false)
   }
 
   const handleCardClick = (id: number, nft: number) => {
@@ -84,11 +91,13 @@ export const Game = (props: GameProps) => {
         onClick={handleCardClick}
       />
 
-      <button type="button" className={s.reset} onClick={handleReset}>
-        GAME RESET
-      </button>
+      <Button className={s.reset} onClick={handleResetClick}>
+        RESTART
+      </Button>
 
-      {unfinishedCards === 0 && <Results fieldSize={fieldSize} clicksSpent={clicksSpent} onReset={handleReset} />}
+      {unfinishedCards === 0 && isResultOpened && (
+        <Result fieldSize={fieldSize} clicksSpent={clicksSpent} onReset={handleResultClose} />
+      )}
     </div>
   )
 }

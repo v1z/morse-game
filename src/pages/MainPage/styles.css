@@ -12,15 +12,3 @@
   background-color: #fff;
   user-select: none;
 }
-
-.link {
-  &:hover .username {
-    color: var(--text-color);
-    opacity: .5;
-  }
-}
-
-.username {
-  color: var(--color-secondary);
-  transition: color .25s, opacity .25s;
-}

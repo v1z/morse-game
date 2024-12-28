@@ -1,6 +1,8 @@
 import React from 'react'
 
 import cn from 'classnames'
+import { Link } from '../../shared/components/Link'
+import { Button } from '../../shared/components/Button'
 
 import s from './styles.css'
 
@@ -30,13 +32,14 @@ export const Settings = (props: SettinsProps) => {
 
   return (
     <div className={s.root}>
-      <h1 className={s.title}>Game of&nbsp;Morse</h1>
+      <h1 className={s.title}>
+        Game of&nbsp;<Link href="https://x.com/Morse_404">$MORSE</Link>
+      </h1>
 
       <span className={s.subtitle}>Choose the field size</span>
 
       <div className={s.controls}>
-        <button
-          type="button"
+        <Button
           className={cn(s.button, s.clickable, {
             [s.clickable_disabled]: fieldSize === MIN_SIZE,
           })}
@@ -44,14 +47,13 @@ export const Settings = (props: SettinsProps) => {
           onClick={handleSizeDec}
         >
           -
-        </button>
+        </Button>
 
-        <span className={cn(s.size, s.clickable)}>
+        <Button className={cn(s.size, s.clickable)} disabled={true}>
           {fieldSize}x{fieldSize}
-        </span>
+        </Button>
 
-        <button
-          type="button"
+        <Button
           className={cn(s.button, s.clickable, {
             [s.clickable_disabled]: fieldSize === MAX_SIZE,
           })}
@@ -59,12 +61,12 @@ export const Settings = (props: SettinsProps) => {
           onClick={handleSizeInc}
         >
           +
-        </button>
+        </Button>
       </div>
 
-      <button type="button" className={cn(s.clickable, s.start)} onClick={handleStartClick}>
-        START THE GAME
-      </button>
+      <Button className={cn(s.clickable, s.start)} onClick={handleStartClick}>
+        START
+      </Button>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { Container } from '../../shared/components/Container'
+import { Link } from '../../shared/components/Link'
 import { Game } from '../../features/game/Game'
 import { Settings } from '../../features/settings/Settings'
 
@@ -37,9 +38,9 @@ export const MainPage = () => {
       </main>
 
       <footer className={s.footer}>
-        <a href="https://x.com/v1z1337" target="_blank" className={s.link}>
-          made by <span className={s.username}>@v1z1337</span>
-        </a>
+        <span>
+          made by <Link href="https://x.com/v1z1337">@v1z1337</Link>
+        </span>
       </footer>
     </>
   )
