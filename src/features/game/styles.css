@@ -82,6 +82,18 @@
   @media (--tablet) {
     width: var(--cell-size);
     height: var(--cell-size);
+
+    &:hover {
+      .cellCover {
+        background-color: var(--color-secondary);
+      }
+    }
+
+    &_opened {
+      .cellCover {
+        background-color: var(--color-secondary);
+      }
+    }
   }
 
   &_opened {
@@ -90,18 +102,6 @@
     color: transparent;
     background-color: var(--color-secondary);
     transform: rotate3d(0, 1, 0, 180deg);
-
-    .cellCover {
-      background-color: var(--color-secondary);
-    }
-  }
-
-  @media (--tablet) {
-    &:hover {
-      .cellCover {
-        background-color: var(--color-secondary);
-      }
-    }
   }
 }
 
