@@ -30,6 +30,10 @@ export const Result = (props: ResultProps) => {
       </p>
 
       <div className={s.resultBtns}>
+        <a href="https://linktr.ee/morse404" target="_blank">
+          <Button className={s.btn}>LEARN MORE</Button>
+        </a>
+
         <Button className={s.btn} onClick={handleShare}>
           SHARE
         </Button>
@@ -37,12 +41,6 @@ export const Result = (props: ResultProps) => {
         <Button className={s.btn} onClick={onReset}>
           CLOSE
         </Button>
-
-        <a href="https://linktr.ee/morse404" target="_blank">
-          <Button className={s.btn} onClick={() => {}}>
-            LEARN MORE
-          </Button>
-        </a>
       </div>
     </section>
   )
