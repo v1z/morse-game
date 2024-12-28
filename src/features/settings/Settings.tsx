@@ -33,7 +33,7 @@ export const Settings = (props: SettinsProps) => {
   return (
     <div className={s.root}>
       <h1 className={s.title}>
-        Game of&nbsp;<Link href="https://x.com/Morse_404">$MORSE</Link>
+        Game of&nbsp;<Link href="https://x.com/Morse_404">MORSE</Link>
       </h1>
 
       <span className={s.subtitle}>Choose the field size</span>

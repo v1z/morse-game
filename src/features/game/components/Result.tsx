@@ -37,6 +37,12 @@ export const Result = (props: ResultProps) => {
         <Button className={s.btn} onClick={onReset}>
           CLOSE
         </Button>
+
+        <a href="https://linktr.ee/morse404" target="_blank">
+          <Button className={s.btn} onClick={() => {}}>
+            LEARN MORE
+          </Button>
+        </a>
       </div>
     </section>
   )
