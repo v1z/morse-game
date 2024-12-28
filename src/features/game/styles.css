@@ -10,7 +10,6 @@
   flex-direction: column;
   min-height: 100vh;
   padding: 60px 0;
-  user-select: none;
 
   @media (--tablet) {
     padding: 90px 0;
@@ -173,6 +172,7 @@
 
 .resultText {
   font-size: 18px;
+  max-width: 340px;
 }
 
 .resultBtns {

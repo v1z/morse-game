@@ -2,18 +2,24 @@ import React from 'react'
 
 import { Button } from '../../../shared/components/Button'
 
+import type { SpentTimeType } from '../utils/spentTime'
+
 import s from '../styles.css'
 
 type ResultProps = {
   fieldSize: number
   clicksSpent: number
+  spentTime: SpentTimeType
   onReset: () => void
 }
 
 export const Result = (props: ResultProps) => {
-  const { fieldSize, clicksSpent, onReset } = props
+  const { fieldSize, clicksSpent, spentTime, onReset } = props
 
-  const textToShare = `Look what I have found - a wonderful game made by @v1z1337 about @Morse_404 NFT collection (sidekick of @MitosisOrg)\n\nI have finished level ${fieldSize} with just ${clicksSpent} clicks - can you beat that record? #findMorseGame\n\nTry it out here https://find-morse.vercel.app/`
+  const { seconds, minutes } = spentTime
+  const spentTimeText = `${!!minutes ? `${minutes}m ` : ''}${seconds}s`
+
+  const textToShare = `Look what I have found - a wonderful game made by @v1z1337 about @Morse_404 NFT collection (sidekick of @MitosisOrg)\n\nI have finished a ${fieldSize}x${fieldSize} field with just ${clicksSpent} clicks and less than ${spentTimeText} - can you beat that record? #findMorseGame\n\nTry it out here https://find-morse.vercel.app/`
 
   const handleShare = () => {
     const tweetText = encodeURIComponent(textToShare)
@@ -26,7 +32,8 @@ export const Result = (props: ResultProps) => {
       <span className={s.resultTitle}>Congratz!</span>
 
       <p className={s.resultText}>
-        You have found {fieldSize * fieldSize} Morse with {clicksSpent} clicks&nbsp;&mdash; share your success on&nbsp;X
+        You have found {fieldSize * fieldSize} Morse with {clicksSpent} clicks and less than {spentTimeText}
+        &nbsp;&mdash; share your success on&nbsp;X
       </p>
 
       <div className={s.resultBtns}>

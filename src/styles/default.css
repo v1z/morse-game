@@ -57,11 +57,20 @@ p {
 button {
   font: inherit;
   color: inherit;
-  outline: none !important;
+  outline: none;
+
+  &:focus-visible,
+  &:focus {
+    outline: none;
+  }
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  outline: none !important;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
 }

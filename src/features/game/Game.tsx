@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Field } from './components/Field'
 import { Result } from './components/Result'
 import { gameSetup } from './utils/gameSetup'
+import { getTime, getFormattedTime } from './utils/spentTime'
 
 import { Button } from '../../shared/components/Button'
 
@@ -27,6 +28,7 @@ export const Game = (props: GameProps) => {
   const [completedCards, setCompletedCards] = useState<number[]>([])
   const [clicksSpent, setClicksSpent] = useState<number>(0)
   const [isResultOpened, setResultOpened] = useState(true)
+  const [spentSeconds, setSpentSeconds] = useState(0)
 
   const { fieldSize, onReset } = props
 
@@ -35,6 +37,16 @@ export const Game = (props: GameProps) => {
 
     setCardsMap(cards)
   }, [fieldSize])
+
+  useEffect(() => {
+    const timer = setInterval(() => setSpentSeconds((prevSeconds) => prevSeconds + 1), 1000)
+
+    if (completedCards.length === fieldSize * fieldSize) {
+      clearInterval(timer)
+    }
+
+    return () => clearInterval(timer)
+  }, [completedCards])
 
   const incrementClicks = () => {
     setClicksSpent(clicksSpent + 1)
@@ -72,13 +84,17 @@ export const Game = (props: GameProps) => {
     setLastClickedNFT(nft)
   }
 
+  const spentTime = getTime(spentSeconds)
+  const formattedTime = getFormattedTime(spentTime)
+  const spentText = `${formattedTime.minutes}:${formattedTime.seconds}`
+
   const unfinishedCards = fieldSize * fieldSize - completedCards.length
 
   return (
     <div className={s.game}>
       <div className={s.stats}>
         <span className={s.statItem}>
-          Morse to find: <span className={s.statValue}>{unfinishedCards}</span>
+          Time spent: <span className={s.statValue}>{spentText}</span>
         </span>
 
         <span className={s.statItem}>
@@ -109,7 +125,7 @@ export const Game = (props: GameProps) => {
       </div>
 
       {unfinishedCards === 0 && isResultOpened && (
-        <Result fieldSize={fieldSize} clicksSpent={clicksSpent} onReset={toggleResultClose} />
+        <Result fieldSize={fieldSize} clicksSpent={clicksSpent} spentTime={spentTime} onReset={toggleResultClose} />
       )}
     </div>
   )
