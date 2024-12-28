@@ -76,9 +76,10 @@
   margin: 4px;
   overflow: hidden;
   box-sizing: border-box;
-  transition: transform .6s, color .3s;
+  transition: transform .6s, color .3s .3s;
 
   @media (--tablet) {
+    transition: transform .6s, color .3s;
     width: var(--cell-size);
     height: var(--cell-size);
 
@@ -87,20 +88,21 @@
         background-color: var(--color-secondary);
       }
     }
+  }
 
-    &_opened {
+  &_opened {
+    transition: transform .6s, color .3s;
+    color: transparent;
+    pointer-events: none;
+    transform: rotate3d(0, 1, 0, 180deg);
+
+    @media (--tablet) {
       background-color: var(--color-secondary);
 
       .cellCover {
         background-color: var(--color-secondary);
       }
     }
-  }
-
-  &_opened {
-    color: transparent;
-    pointer-events: none;
-    transform: rotate3d(0, 1, 0, 180deg);
   }
 }
 
