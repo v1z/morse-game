@@ -83,7 +83,8 @@
     width: var(--cell-size);
     height: var(--cell-size);
 
-    &:hover {
+    &:hover,
+    &:focus {
       .cellCover {
         background-color: var(--color-secondary);
       }
