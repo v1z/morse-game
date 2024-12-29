@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import cn from 'classnames'
 import { Link } from '../../shared/components/Link'
@@ -18,6 +18,8 @@ const MAX_SIZE = 8
 export const Settings = (props: SettinsProps) => {
   const { onStart, onSizeChange, fieldSize } = props
 
+  const [isUnmounting, setUnmounting] = useState(false)
+
   const handleSizeInc = () => {
     onSizeChange(fieldSize + 2)
   }
@@ -27,11 +29,18 @@ export const Settings = (props: SettinsProps) => {
   }
 
   const handleStartClick = () => {
-    onStart()
+    setUnmounting(true)
+
+    // keep ms in touch with css delay
+    setTimeout(() => onStart(), 600)
   }
 
   return (
-    <div className={s.root}>
+    <div
+      className={cn(s.root, {
+        [s.root_unmount]: isUnmounting,
+      })}
+    >
       <h1 className={s.title}>
         Game of&nbsp;<Link href="https://x.com/Morse_404">MORSE</Link>
       </h1>
@@ -67,6 +76,10 @@ export const Settings = (props: SettinsProps) => {
       <Button className={cn(s.clickable, s.start)} onClick={handleStartClick}>
         START
       </Button>
+
+      {/* <div className={s.morseWrapper}>
+        <img width="90" height="75" src="./assets/morse.png" alt="Morse" />
+      </div> */}
     </div>
   )
 }

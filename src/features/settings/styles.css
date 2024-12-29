@@ -4,6 +4,41 @@
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 36px);
+  animation-name: showUp;
+  animation-duration: var(--show-hide-delay);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  pointer-events: none;
+
+  &_unmount {
+    animation-name: showDown;
+  }
+}
+
+
+@keyframes showUp {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  100% {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
+
+@keyframes showDown {
+  0% {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 .title {

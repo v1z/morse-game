@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import cn from 'classnames'
 import { Field } from './components/Field'
 import { Result } from './components/Result'
 import { gameSetup } from './utils/gameSetup'
@@ -29,6 +30,7 @@ export const Game = (props: GameProps) => {
   const [clicksSpent, setClicksSpent] = useState<number>(0)
   const [isResultOpened, setResultOpened] = useState(true)
   const [spentSeconds, setSpentSeconds] = useState(0)
+  const [isUnmounting, setUnmounting] = useState(false)
 
   const { fieldSize, onReset } = props
 
@@ -36,7 +38,7 @@ export const Game = (props: GameProps) => {
     const cards = gameSetup(SUPPORTED_NFT_NUMBERS, fieldSize * fieldSize)
 
     setCardsMap(cards)
-  }, [fieldSize])
+  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => setSpentSeconds((prevSeconds) => prevSeconds + 1), 1000)
@@ -53,7 +55,10 @@ export const Game = (props: GameProps) => {
   }
 
   const handleResetClick = () => {
-    onReset()
+    setUnmounting(true)
+
+    // keep ms in touch with css delay
+    setTimeout(() => onReset(), 600)
   }
 
   const toggleResultClose = () => {
@@ -91,7 +96,11 @@ export const Game = (props: GameProps) => {
   const unfinishedCards = fieldSize * fieldSize - completedCards.length
 
   return (
-    <div className={s.game}>
+    <div
+      className={cn(s.game, {
+        [s.game_unmount]: isUnmounting,
+      })}
+    >
       <div className={s.stats}>
         <span className={s.statItem}>
           Time spent: <span className={s.statValue}>{spentText}</span>

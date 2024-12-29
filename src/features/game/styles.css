@@ -10,9 +10,44 @@
   flex-direction: column;
   min-height: 100vh;
   padding: 60px 0;
+  animation-name: showUp;
+  animation-duration: var(--show-hide-delay);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  pointer-events: none;
+
+  &_unmount {
+    animation-name: showDown;
+  }
 
   @media (--tablet) {
     padding: 90px 0;
+  }
+}
+
+
+@keyframes showUp {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  100% {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
+
+@keyframes showDown {
+  0% {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  100% {
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
@@ -195,4 +230,8 @@
     margin-bottom: 8px;
     padding: 0 24px;
   }
+}
+
+.highlight {
+  color: var(--color-secondary);
 }

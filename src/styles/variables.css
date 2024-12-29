@@ -18,6 +18,8 @@
   --color-secondary: #637cff;
   --color-text: #2b2b2b;
 
+  --show-hide-delay: .4s;
+
   /* grid layout */
   --grid-padding: 12px;
   --grid-content-fluid: calc(512px + 2 * var(--grid-padding));

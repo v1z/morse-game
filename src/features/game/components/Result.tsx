@@ -32,7 +32,9 @@ export const Result = (props: ResultProps) => {
       <span className={s.resultTitle}>Congratz!</span>
 
       <p className={s.resultText}>
-        You have found {fieldSize * fieldSize} Morse with {clicksSpent} clicks and less than {spentTimeText}
+        You have found <span className={s.highlight}>{fieldSize * fieldSize} Morse</span> with{' '}
+        <span className={s.highlight}>{clicksSpent} clicks</span> and less than{' '}
+        <span className={s.highlight}>{spentTimeText}</span>
         &nbsp;&mdash; share your success on&nbsp;X
       </p>
 
