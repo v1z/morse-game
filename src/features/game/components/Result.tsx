@@ -19,7 +19,7 @@ export const Result = (props: ResultProps) => {
   const { seconds, minutes } = spentTime
   const spentTimeText = `${!!minutes ? `${minutes}m ` : ''}${seconds}s`
 
-  const textToShare = `Look what I have found - a wonderful game made by @v1z1337 about @Morse_404 NFT collection (sidekick of @MitosisOrg)\n\nI have finished a ${fieldSize}x${fieldSize} field with just ${clicksSpent} clicks and less than ${spentTimeText} - can you beat that record? #findMorseGame\n\nTry it out here https://find-morse.vercel.app/`
+  const textToShare = `#Gmorse @Morse_404\n\nI have finished a ${fieldSize}x${fieldSize} field with just ${clicksSpent} clicks and less than ${spentTimeText} — can you beat that record?\n\nTry it out here https://game-of-morse.vercel.app/`
 
   const handleShare = () => {
     const tweetText = encodeURIComponent(textToShare)
