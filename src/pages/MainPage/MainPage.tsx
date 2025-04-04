@@ -39,7 +39,7 @@ export const MainPage = () => {
 
       <footer className={s.footer}>
         <span>
-          made by <Link href="https://x.com/v1z1337">@v1z1337</Link>
+          made by <Link href="https://x.com/v1z1337">@v1z</Link>
         </span>
       </footer>
     </>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import cn from 'classnames'
 
 import { Button } from '../../../shared/components/Button'
@@ -14,6 +14,26 @@ type CellProps = {
 
 export const Cell = (props: CellProps) => {
   const { id, nft, onClick, isOpened } = props
+
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    const img = new Image()
+
+    img.src = `./nfts/${nft}.jpg`
+    img.onload = () => {
+      canvas.width = img.width
+      canvas.height = img.height
+
+      ctx.drawImage(img, 0, 0)
+    }
+  }, [isOpened])
 
   const handleClick = (id: number, nft: number) => {
     onClick && onClick(id, nft)
@@ -31,11 +51,12 @@ export const Cell = (props: CellProps) => {
           [s.cellCover_hidden]: isOpened,
         })}
       >
-        <span>MORSE</span>
-        <span>404</span>
+        <span className={s.cellText}>MORSE</span>
+        <span className={s.cellText}>404</span>
       </div>
 
-      <img src={`./nfts/${nft}.jpg`} alt="" />
+      {/* isOpened - prevent from cheating by deleting cellCover via dev tools */}
+      {isOpened && <canvas className={s.canvas} ref={canvasRef} />}
     </Button>
   )
 }

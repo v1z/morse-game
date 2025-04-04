@@ -111,7 +111,10 @@ export const Game = (props: GameProps) => {
         </span>
       </div>
 
-      <p className={s.gameTitle}>Click on&nbsp;the card and reveal the Morse, then try to&nbsp;find the same one</p>
+      <p className={s.gameTitle}>
+        Click on&nbsp;the card and reveal the <span className={s.highlight}>Morse</span>, then try to&nbsp;find the{' '}
+        <span className={s.highlight}>same one</span>
+      </p>
 
       <Field
         cards={cardsMap}

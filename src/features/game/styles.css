@@ -132,10 +132,8 @@
     transform: rotate3d(0, 1, 0, 180deg);
 
     @media (--tablet) {
-      background-color: var(--color-secondary);
-
-      .cellCover {
-        background-color: var(--color-secondary);
+      .cellText {
+        opacity: 0;
       }
     }
   }
@@ -171,6 +169,17 @@
       transition: background-color .3s, opacity .3s .3s;
     }
   }
+}
+
+.cellText {
+  transition-property: opacity;
+  transition-duration: .3s;
+  transition-delay: .3s;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
 }
 
 .buttons {
